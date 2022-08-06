@@ -1,7 +1,6 @@
 'This program was written by Dan Elliott to create a bill of materials for specific AutoCAD blocks using a prefabbed "BOM.xlsm" file
 'Data is imported into the Excel file using an AutoLISP program and then rearranged and pasted into the BOM file 
 
-
 Attribute VB_Name = "Module1"
 Sub Main_acc_bom()
 
