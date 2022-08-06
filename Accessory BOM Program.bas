@@ -1,3 +1,7 @@
+'This program was written by Dan Elliott to create a bill of materials for specific AutoCAD blocks using a prefabbed "BOM.xlsm" file
+'Data is imported into the Excel file using an AutoLISP program and then rearranged and pasted into the BOM file 
+
+
 Attribute VB_Name = "Module1"
 Sub Main_acc_bom()
 
@@ -33,8 +37,7 @@ If file = "" Then
 Else
 
     Dim bom As Excel.Workbook  'set file location and variable
-    Set bom = Workbooks.Open("G:\NMBS STANDARDS\Accessory BOM Program\Deck BOM .xlsm")
-
+    Set bom = Workbooks.Open("C:\string\to\BOM.xlsm")
 
     ws2.Calculate       'Calculate inputed values from autocad to BOM format
     ws3.Calculate
@@ -44,7 +47,7 @@ Else
     Call acc_dims
     Call project_info
 
-    Application.Run "'G:\NMBS STANDARDS\Accessory BOM Program\Deck BOM .xlsm'!NumberBOMSet"
+    Application.Run "'C:\string\to\BOM.xlsm'!NumberBOMSet"
 
     Call save_bom
 
@@ -58,7 +61,6 @@ Else
 End If
 End Sub
 
-
 Sub acc_seq()
 
 Dim Filename As String
@@ -67,7 +69,7 @@ Dim wb1 As Excel.Workbook  'set file location and variable
 Set wb1 = Workbooks("Accessory BOM Program.xlsm")
 
 Dim bom As Excel.Workbook  'set file location and variable
-Set bom = Workbooks.Open("G:\NMBS STANDARDS\Accessory BOM Program\Deck BOM .xlsm")
+Set bom = Workbooks.Open("C:\string\to\BOM.xlsm")
   
 Dim ws1 As Worksheet     'sets worksheet variable for accessory consolidation sheet
 Set ws1 = wb1.Worksheets("Acc_Seq")
@@ -147,10 +149,9 @@ For a = 1 To sheets         'while pages are left to print, run loop
 
         'S.Copy After:=ws1
         'ActiveSheet.Name = "S (" & a & ")"
-    Application.Run "'G:\NMBS STANDARDS\Accessory BOM Program\Deck BOM .xlsm '!addseqsheet"
+    Application.Run "'C:\string\to\BOM.xlsm'!addseqsheet"
     Application.EnableEvents = False
-
-                                
+                                                
     ws1.Range(ws1.Cells(u + (37 * m), 2 + n), ws1.Cells(col + (37 * m), 15 + o)).Copy 'copy acc amounts and values shifted down m
     bom.sheets("S (" & a & ")").Range("B14").PasteSpecial xlPasteValues
     ws1.Range(ws1.Cells(1, 2 + n), ws1.Cells(1, 15 + o)).Copy              'copies seq numbers
@@ -187,7 +188,7 @@ Dim wb1 As Excel.Workbook  'set file location and variable
 Set wb1 = Workbooks("Accessory BOM Program.xlsm")
 
 Dim bom As Excel.Workbook  'set file location and variable
-Set bom = Workbooks.Open("G:\NMBS STANDARDS\Accessory BOM Program\Deck BOM .xlsm")
+Set bom = Workbooks.Open("C:\string\to\BOM.xlsm")
   
 Dim ws1 As Worksheet     'sets worksheet variable for accessory consolidation sheet
 Set ws1 = wb1.Worksheets("Acc_Dim")
@@ -230,7 +231,7 @@ For a = 1 To sheets  'while pages are left to print, run loop
     Debug.Print n & " value I"
     Debug.Print col & " value COL"
 
-    Application.Run "'G:\NMBS STANDARDS\Accessory BOM Program\Deck BOM .xlsm'!addaccsheet"
+    Application.Run "'C:\string\to\BOM.xlsm'!addaccsheet"
     Application.EnableEvents = False
     
     ws1.Range(ws1.Cells(1 + (24 * n), 14), ws1.Cells(24 + (24 * n), 14)).Copy 'copy acc amounts and values shifted down m
@@ -307,7 +308,7 @@ Dim wb1 As Excel.Workbook  'set file location and variable
 Set wb1 = Workbooks("Accessory BOM Program.xlsm")
 
 Dim bom As Excel.Workbook  'set file location and variable
-Set bom = Workbooks.Open("G:\NMBS STANDARDS\Accessory BOM Program\Deck BOM .xlsm")
+Set bom = Workbooks.Open("C:\string\to\BOM.xlsm.xlsm")
   
 Dim ws1 As Worksheet     'sets worksheet variable for accessory consolidation sheet
 Set ws1 = wb1.Worksheets("Acc BOM")
@@ -327,7 +328,7 @@ End Sub
 Sub Reset(RowNum As Integer)
 
 Dim bom As Excel.Workbook  'set file location and variable
-Set bom = Workbooks.Open("G:\NMBS STANDARDS\Accessory BOM Program\Deck BOM .xlsm")
+Set bom = Workbooks.Open("C:\string\to\BOM.xlsm.xlsm")
 
 Dim sheet As Worksheet
 Set sheet = bom.Worksheets("A (1)")
@@ -400,7 +401,7 @@ Dim wb1 As Excel.Workbook   'set file location and variable
 Set wb1 = Workbooks("Accessory BOM Program.xlsm")
 
 Dim bom As Excel.Workbook   'set file location and variable
-Set bom = Workbooks.Open("G:\NMBS STANDARDS\Accessory BOM Program\Deck BOM .xlsm")
+Set bom = Workbooks.Open("C:\string\to\BOM.xlsm")
   
 Dim ws1 As Worksheet        'sets worksheet variable for accessory consolidation sheet
 Set ws1 = wb1.Worksheets("Acc BOM")
