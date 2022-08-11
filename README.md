@@ -1,5 +1,5 @@
 -  Hi, I’m @danelliott412
--  I’m interested in Python, VBA, SQL and MachineLearning
+-  I’m interested in Python, VBA, and Machine Learning
 -  I have primarily used Python and VBA to manipulate data and AutoCAD blocks 
 -  I’m looking to collaborate on any projects utilizing VBA and Python. 
 -  How to reach me: danelliott412@gmail.com 
